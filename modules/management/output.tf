@@ -1,3 +1,3 @@
-output "jenkins_fqdn" {
-    value = azurerm_public_ip.jenkins.fqdn
+output "manager_fqdn" {
+    value = azurerm_public_ip.manager.fqdn
 }
