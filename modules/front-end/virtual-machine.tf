@@ -28,13 +28,4 @@ resource "azurerm_virtual_machine" "front_end" {
 	  key_data = file(pathexpand("~/.ssh/id_rsa.pub"))
 	}
   }
-  tags = {
-    environment = terraform.workspace
-  }
-  connection {
-		type = "ssh"
-		user = var.admin_user
-		private_key = file(pathexpand("~/.ssh/id_rsa"))
-		host = azurerm_public_ip.front_end.fqdn
-  }
 }
