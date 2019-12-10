@@ -31,7 +31,7 @@ resource "azurerm_virtual_machine" "database" {
     os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-	path = "/home/${var.admin}/.ssh/authorized_keys"
+	path = "/home/${var.admin_user}/.ssh/authorized_keys"
 	key_data = "${file("/home/user/.ssh/id_rsa.pub")}"
         }
     }

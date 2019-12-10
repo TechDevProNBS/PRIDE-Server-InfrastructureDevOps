@@ -7,7 +7,8 @@ resource "azurerm_network_interface" "back_end" {
 
   ip_configuration {
     name                          = "${terraform.workspace}-back_end"
-    subnet_id                     = azurerm_subnet.default.id
-    private_ip_address_allocation = "10.0.2.11/24"
+    subnet_id                     = azurerm_subnet.backend.id
+    private_ip_address_allocation = "Static"
+    private_ip_address            = "10.0.2.11"
   }
 }

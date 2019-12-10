@@ -9,6 +9,6 @@ resource "azurerm_network_interface" "manager_nic" {
     name                          = "${terraform.workspace}-manager"
     subnet_id                     = azurerm_subnet.manager_net.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.jenkins.id
+    public_ip_address_id          = azurerm_public_ip.manager.id
   }
 }   

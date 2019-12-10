@@ -3,7 +3,7 @@ resource "azurerm_virtual_machine" "manager" {
     resource_group_name = var.resource_group.name
     location = var.resource_group.location
     network_interface_ids = [azurerm_network_interface.manager_nic.id]
-    vm_size = "Standard_DS1_v2"
+    vm_size               = "Standard_B1ms"
 
    storage_image_reference {
     publisher = "Canonical"
@@ -28,7 +28,7 @@ resource "azurerm_virtual_machine" "manager" {
     os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-	path = "/home/${var.admin}/.ssh/authorized_keys"
+	path = "/home/${var.admin_user}/.ssh/authorized_keys"
 	key_data = "${file("/home/user/.ssh/id_rsa.pub")}"
         }
     }

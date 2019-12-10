@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "front_end" {
 
   ip_configuration {
     name                          = "${terraform.workspace}-front_end"
-    subnet_id                     = azurerm_subnet.default.id
+    subnet_id                     = azurerm_subnet.frontend.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.front_end.id
   }

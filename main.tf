@@ -11,32 +11,36 @@ provider "azurerm" {
 	version = "=1.30.1"
 }
 
-module "back-end" {
-  source = "./modules/back-end"
-  admin_user = "jenkins"
-  resource_group = azurerm_resource_group.default
-  virtual_network = azurerm_virtual_network.default
-}
-
-module "database" {
-  source = "./modules/database"
-  admin_user = "jenkins"
-  resource_group = azurerm_resource_group.default
-  virtual_network = azurerm_virtual_network.default
-}
-
 module "front-end" {
   source = "./modules/front-end"
-  admin_user = "jenkins"
+  admin_user = "pride"
   resource_group = azurerm_resource_group.default
   virtual_network = azurerm_virtual_network.default
+  subnet_cidr = "10.0.1.0/24"
+}
+
+module "back-end" {
+  source = "./modules/back-end"
+  admin_user = "pride"
+  resource_group = azurerm_resource_group.default
+  virtual_network = azurerm_virtual_network.default
+  subnet_cidr = "10.0.2.0/24"
 }
 
 module "management" {
   source = "./modules/management"
-  admin_user = "jenkins"
+  admin_user = "pride"
   resource_group = azurerm_resource_group.default
   virtual_network = azurerm_virtual_network.default
+  subnet_cidr = "10.0.3.0/24"
+}
+
+module "database" {
+  source = "./modules/database"
+  admin_user = "pride"
+  resource_group = azurerm_resource_group.default
+  virtual_network = azurerm_virtual_network.default
+  subnet_cidr = "10.0.4.0/24"
 }
 
 resource "azurerm_resource_group" "default" {

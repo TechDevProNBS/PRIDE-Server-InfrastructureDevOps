@@ -1,5 +1,5 @@
-resource "azurerm_virtual_machine" "front_end" {
-  name                  = "${terraform.workspace}-front_end-vm"
+resource "azurerm_virtual_machine" "frontend" {
+  name                  = "${terraform.workspace}-frontend-vm"
   location              = var.resource_group.location
   resource_group_name   = var.resource_group.name
   network_interface_ids = [azurerm_network_interface.front_end.id]
@@ -12,13 +12,13 @@ resource "azurerm_virtual_machine" "front_end" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "${terraform.workspace}-front_end-vm"
+    name              = "${terraform.workspace}-frontend-vm"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "${terraform.workspace}-front_end-vm"
+    computer_name  = "${terraform.workspace}-frontend-vm"
     admin_username = var.admin_user
   }
   os_profile_linux_config {
