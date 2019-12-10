@@ -1,3 +1,4 @@
 jenkins.yml
 nginx.yml
-
+docker-script.sh
+nginx.conf
