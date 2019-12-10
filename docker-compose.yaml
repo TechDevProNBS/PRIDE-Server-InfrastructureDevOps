@@ -1,0 +1,21 @@
+version: '3'
+services:
+  eureka-server:
+    image:
+    ports: 
+      - "8761:8761"
+  achievements-service:
+    image: achievements
+      ports: "9001:9001"
+  cards-service:
+    image: cards
+      ports:
+        - "[port]:[port]"
+  login-service:
+    image: login
+      ports:
+        - "[port]:[port]"
+  
+  
+    
+
