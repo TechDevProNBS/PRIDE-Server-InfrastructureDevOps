@@ -1,0 +1,27 @@
+Docker container steps
+
+install docker - *created and used docker script*
+
+check docker is running - sudo systemctl status docker
+
+check docker is working and running correctly - docker run hello-world
+
+To search for the image you want to use, in this case ubuntu. - docker search ubuntu
+
+find desired image and then pulll it down - docker pull ubuntu
+
+to view list of timages that have been pulled and installed - docker images
+
+To then run the conatiner with the image - docker run -it ubuntu
+
+To list containers - sudo docker container ps -l
+
+to remove a container - sudo docker rm *container name or ID*
+
+To remove all of the contaienrs that you have created - sudo docker conatiner prune
+
+To log into docker - docker login -u **your docker username**
+
+To push online - docker push **Docker username** and then select want your pushing
+
+
