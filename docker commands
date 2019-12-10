@@ -8,9 +8,9 @@ check docker is working and running correctly - docker run hello-world
 
 To search for the image you want to use, in this case ubuntu. - docker search ubuntu
 
-find desired image and then pulll it down - docker pull ubuntu
+find desired image and then pull it down - docker pull ubuntu
 
-to view list of timages that have been pulled and installed - docker images
+to view list of images that have been pulled and installed - docker images
 
 To then run the conatiner with the image - docker run -it ubuntu
 
