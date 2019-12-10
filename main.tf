@@ -1,4 +1,3 @@
-# may need to change this 
 terraform {
   backend "azurerm" {
     storage_account_name  = var.storage_account_name

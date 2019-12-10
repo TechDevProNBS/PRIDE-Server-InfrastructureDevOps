@@ -5,12 +5,12 @@ resource "azurerm_virtual_machine" "manager" {
     network_interface_ids = [azurerm_network_interface.manager_nic.id]
     vm_size               = "Standard_B1ms"
 
-   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
-  }
+    storage_image_reference {
+      publisher = "Canonical"
+      offer     = "UbuntuServer"
+      sku       = "18.04-LTS"
+      version   = "latest"
+    }
 
     storage_os_disk {
     name              = "${var.prefix}-manager-vm"
@@ -28,8 +28,8 @@ resource "azurerm_virtual_machine" "manager" {
     os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
-	path = "/home/${var.admin_user}/.ssh/authorized_keys"
-	key_data = "${file("/home/user/.ssh/id_rsa.pub")}"
+    path = "/home/${var.admin_user}/.ssh/authorized_keys"
+    key_data = "${file("/home/user/.ssh/id_rsa.pub")}"
         }
     }
 }

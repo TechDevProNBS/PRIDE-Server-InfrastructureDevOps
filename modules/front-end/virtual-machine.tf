@@ -1,5 +1,5 @@
 resource "azurerm_virtual_machine" "frontend" {
-  name                  = "${terraform.workspace}-frontend-vm"
+  name                  = "${var.prefix}-frontend-vm"
   location              = var.resource_group.location
   resource_group_name   = var.resource_group.name
   network_interface_ids = [azurerm_network_interface.front_end.id]

@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "database" {
   ip_configuration {
     name                          = "${terraform.workspace}-database"
     subnet_id                     = azurerm_subnet.database.id
-    private_ip_address_allocation = "Static"
-    private_ip_address            = "10.0.4.11" 
+    private_ip_address_allocation = "Dynamic"
+    # private_ip_address            = "10.0.4.11" 
   }
 }
