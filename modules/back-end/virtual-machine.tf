@@ -3,7 +3,7 @@ resource "azurerm_virtual_machine" "backend" {
   location              = var.resource_group.location
   resource_group_name   = var.resource_group.name
   network_interface_ids = [azurerm_network_interface.back_end.id]
-  vm_size               = "Standard_B1ms"
+  vm_size               = "Standard_B2S"
 
   # May need to bump to "Standard_B2" if 1 core does not suffice
 
